@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome To Nashville</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <h1>Welcome To Nashville</h1>
+    <h2>Search for stuff to do today</h2>
+    <container id="searchContainer">
+        <fieldset>
+            <p><input type="text" placeholder="parks by feature"><button id="parksButton">Search</button></p>
+            <p><input type="text" placeholder="public art by description"><button id="artCollectionsButton">Search</button></p>
+            <p><input type="text" placeholder="restaurants by food type"><button id="restaurantsButton">Search</button></p>
+            <p><input type="text" placeholder="concerts by genre"><button id="concertsButton">Search</button></p>
+        </fieldset>
+    </container>
+
+
+    <container id="resultsContainer"></container>
+    
+
+    <h2> My Itenerary</h2>
+    <container id="itineraryContainer">
+        <p id="parkName">Park: </p>
+        <p id="artName">Art: </p>
+        <p id="restaurantName">Restaurants: </p>
+        <p id="concertName">Concerts: </p>
+    </container>
+
+
+    <script src="scripts/apiKeys.js"></script>
+    <script src="scripts/parks.js"></script>
+    <script src="scripts/artCollections.js"></script>
+    <script src="scripts/restaurants.js"></script>
+    <script src="scripts/concerts.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
