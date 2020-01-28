@@ -8,4 +8,6 @@ return fetch(restaurantURL)
     .then(parsedRestaurants => {
         console.log(parsedRestaurants)
     })}}
-   
+   const restaurantSearch = {
+
+   }
