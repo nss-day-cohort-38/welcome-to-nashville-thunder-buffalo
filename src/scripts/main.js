@@ -1,0 +1,1 @@
+restaurantApi.getRestaurants()
