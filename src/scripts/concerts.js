@@ -47,12 +47,16 @@ const insertConcertToDom= (concert) => {
     resultsContainer.innerHTML += concert;
 }
 
-const captureUserInfo = (event) => {
-    concertKeyword = concertSearchText.value;
+function capitalizeFirstLetter(string) {
+    concertKeyword = string.charAt(0).toUpperCase() + string.slice(1);
     concertAPI.getConcerts(concertKeyword);
     concertSearchText.value = "";
-    
+}
 
+
+const captureUserInfo = (event) => {
+    concertKeyword = concertSearchText.value;
+    capitalizeFirstLetter(concertKeyword);
 }
 
 document.getElementById("concertsButton").addEventListener("click", captureUserInfo);
