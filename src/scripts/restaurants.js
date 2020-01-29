@@ -1,5 +1,5 @@
 const restaurantApiKey = apiKeys.restaurantKey;
-let resultsContainers = document.querySelector("#resultsContainers")
+const resultsContainers = document.querySelector("#resultsContainer")
 const restaurantSearchText = document.getElementById("restaurantText")
 
 
@@ -13,7 +13,7 @@ const restaurantApi = {
 
                 const restaurantResults =
                     parsedRestaurants.restaurants
-resultsContainers.innerHTML=""
+//resultsContainers.innerHTML=""
 resultsContainers.innerHTML=`<h2>Restaurant Results</h2>`
                 restaurantResults.forEach((restaurants, i) => {
                     const restaurantName = restaurants.restaurant.name
@@ -52,19 +52,19 @@ const getButtonsId = (event) => {
     console.log(getButtonsId)
     favoriteButtonManager.removeFavorite();
     const restaurant = document.getElementById(`restName-${getButtonsId}`)
-    restaurant.classList.add("favorite")
+    restaurant.classList.add("favorites")
     favoriteButtonManager.addItinerary();
 }
 document.getElementById("resultsContainer").addEventListener("click", getButtonsId);
 const favoriteButtonManager = {
     removeFavorite() {
-        const restaurants = document.querySelectorAll(".favorite")
+        const restaurants = document.querySelectorAll(".favorites")
         for (let restaurant of restaurants) {
-            restaurant.classList.remove("favorite")
+            restaurant.classList.remove("favorites")
         }
     },
     addItinerary() {
-        const restaurants= document.querySelector(".favorite");
+        const restaurants= document.querySelector(".favorites");
         const itinerary = document.getElementById("restaurantName")
         itinerary.textContent= `Restaurants: ${restaurants.textContent}`
     }
