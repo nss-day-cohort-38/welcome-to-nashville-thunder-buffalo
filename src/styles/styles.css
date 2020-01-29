@@ -8,3 +8,7 @@
     border-bottom: 1px solid black;
     margin-bottom: 10px;
 }
+li {
+    list-style: none;
+}
+
