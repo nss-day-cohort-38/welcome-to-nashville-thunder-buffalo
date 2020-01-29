@@ -14,6 +14,7 @@ const concertAPI = {
         .then(response => response.json())
         .then(parsedConcerts => {
             const parsedEvents = parsedConcerts._embedded.events;
+            //try to wipe page here
             parsedEvents.forEach((concert, i) => {     
                 const genre = concert.classifications[0].genre.name;
                    if (genre === concertKeyword) {
@@ -75,13 +76,6 @@ document.getElementById("resultsContainer").addEventListener("click",getButtonId
 
 
 const favoriteEventManager = {
-//     addFavorite() {
-//       const buttons = document.querySelectorAll("#concertButton-");
-//       console.log(buttons)
-//       for (let button of buttons) {
-//         button.addEventListener("click", getButtonId);
-//       }
-//     },
      removeFavorite () {
       const favorites = document.querySelectorAll(".favorite");
       const artists = document.querySelectorAll(".favoriteArtist");
@@ -106,27 +100,5 @@ const favoriteEventManager = {
         itinerary.textContent = `Concerts: ${artist.textContent} ${venue.textContent}`
 }
 }
-
-
-
-//   favoriteEventManager.addFavorite();
-
-
-
-
-
-//   const runEventManager = () => {
-//     favoriteEventManager.removeFavorite();
-//     favoriteEventManager.addFavorite();
-//   }
-
-//   document.getElementById("resultsContainer").addEventListener("click",runEventManager);
-
-//   favoriteEventManager.removeFavoriteEventListeners();
-//   favoriteEventManager.addFavoriteEventListeners();
-
-
-//function that adds favoriteId to li
-//function that removes favoriteId and adds 
 
 
