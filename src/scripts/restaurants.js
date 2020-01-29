@@ -13,7 +13,8 @@ const restaurantApi = {
 
                 const restaurantResults =
                     parsedRestaurants.restaurants
-
+resultsContainer.innerHTML=""
+resultsContainer.innerHTML=`<h2>Restaurant Results</h2>`
                 restaurantResults.forEach((restaurants, i) => {
                     const restaurantName = restaurants.restaurant.name
 
@@ -28,10 +29,12 @@ const restaurantApi = {
 
 const restResults = (name, index) => {
     return `
-     <ul>
-     <li id=restName-${index}>${name}</li>
-     <li><button id=restButton-${index}>Save</button></li>
-     </ul>`
+    <div>
+     <span> ${index+1}.</span>
+     <span id=restName-${index}>${name}</span>
+     <span><button id=restButton-${index}>Save</button></span>
+     </div>
+    `
 }
 const restaurantToDom = (name) => {
     resultsContainer.innerHTML += name
@@ -47,5 +50,22 @@ document.getElementById("restaurantsButton").addEventListener("click", searchRes
 const getButtonsId = (event) => {
     const getButtonsId = (event.target.id.split('-')[1]);
     console.log(getButtonsId)
+    favoriteButtonManager.removeFavorite();
+    const restaurant = document.getElementById(`restName-${getButtonsId}`)
+    restaurant.classList.add("favorite")
+    favoriteButtonManager.addItinerary();
 }
 document.getElementById("resultsContainer").addEventListener("click", getButtonsId);
+const favoriteButtonManager = {
+    removeFavorite() {
+        const restaurants = document.querySelectorAll(".favorite")
+        for (let restaurant of restaurants) {
+            restaurant.classList.remove("favorite")
+        }
+    },
+    addItinerary() {
+        const restaurants= document.querySelector(".favorite");
+        const itinerary = document.getElementById("restaurantName")
+        itinerary.textContent= `Restaurants: ${restaurants.textContent}`
+    }
+}
