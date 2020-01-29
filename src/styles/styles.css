@@ -1,0 +1,10 @@
+.artwork.favorite {
+    font-weight: bold;
+    background-color: lightblue;
+    border: 1px solid darkblue;
+}
+
+.artwork {
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
