@@ -1,1 +1,1 @@
-restaurantApi.getRestaurants()
+//restaurantApi.getRestaurants()

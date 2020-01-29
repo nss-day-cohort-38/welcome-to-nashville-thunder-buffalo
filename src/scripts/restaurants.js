@@ -1,9 +1,11 @@
 const restaurantApiKey = apiKeys.restaurantKey;
 let containerResults = document.querySelector("#resultsContainer")
+const restaurantSearchText = document.getElementById("restaurantText")
 
-const restaurantURL = `https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&q=greek&sort=rating&apikey=${restaurantApiKey}`
+
 const restaurantApi = {
-getRestaurants () { console.log()
+getRestaurants (restKeyword) { console.log()
+    const restaurantURL = `https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&q=${restKeyword}&sort=rating&apikey=${restaurantApiKey}`
 return fetch(restaurantURL)
     .then(r => r.json())
     .then(parsedRestaurants => {
@@ -27,6 +29,13 @@ console.log(restaurantResults)
      </ul>`
  }
  const restaurantToDom = (name) => {
-     containerResults.innerHTML += name
+    containerResults.innerHTML += name
      
  }
+ const searchRestButton = (event) => {
+     restKeyword = restaurantSearchText.value
+     restaurantApi.getRestaurants(restKeyword);
+     restaurantSearchText.value = "";
+ }
+ document.getElementById("restaurantsButton").addEventListener("click", searchRestButton); 
+
