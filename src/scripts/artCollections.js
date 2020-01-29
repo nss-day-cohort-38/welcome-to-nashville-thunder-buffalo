@@ -48,7 +48,7 @@ const favoriteEventHandler1 = (evt) => {
     const artist = document.getElementById(`artist-${index}`);
 
 
-    artworkSection.classList.add('favorite');
+    artworkSection.classList.add('favorite1');
     artworkName.classList.add('favorite__artwork')
     artist.classList.add('favorite__artist')
     favoriteEventManager1.addItinerary()
@@ -63,11 +63,11 @@ const favoriteEventManager1 = {
         }
     },
     removeFavorite() {
-        const favorites = document.querySelectorAll(".favorite")
+        const favorites = document.querySelectorAll(".favorite1")
         const artworkNames = document.querySelectorAll(".favorite__artwork")
         const artists = document.querySelectorAll(".favorite__artist")
         for (let favorite of favorites) {
-            favorite.classList.remove("favorite")
+            favorite.classList.remove("favorite1")
         }
         for (let name of artworkNames) {
             name.classList.remove("favorite__artwork")
