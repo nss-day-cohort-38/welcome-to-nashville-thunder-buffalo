@@ -1,0 +1,1 @@
+searchParksManager.addSearchClickEventListener();
