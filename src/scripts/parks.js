@@ -59,7 +59,7 @@ const searchResultsDomManager0 = {
         console.log("renderSearchResults");
 
         const container = document.querySelector("#resultsContainer");
-        container.innerHTML = "";
+        container.innerHTML = `<h2> parkResults </h2>`;
 
         for (let i = 0; i < searchResults.length; i++) {
             const parkResults = searchResults[i];
