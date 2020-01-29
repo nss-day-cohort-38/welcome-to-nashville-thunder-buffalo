@@ -6,15 +6,12 @@ let resultsContainer = document.querySelector("#resultsContainer");
 const concertsContainer = document.getElementById("concertName");
 
 
-// resultsContainer = "";
-
 const concertAPI = {
     getConcerts(concertKeyword) {
       return fetch(`http://app.ticketmaster.com/discovery/v2/events.json?keyword=${concertKeyword}&city=Nashville&apikey=${concertAPIKey}`)
         .then(response => response.json())
         .then(parsedConcerts => {
             const parsedEvents = parsedConcerts._embedded.events;
-            resultsContainer.innerHTML = "";
             resultsContainer.innerHTML = `<h2>Concerts</h2>`
             parsedEvents.forEach((concert, i) => {     
                 const genre = concert.classifications[0].genre.name;
