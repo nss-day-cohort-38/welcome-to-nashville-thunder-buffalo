@@ -1,5 +1,5 @@
 const restaurantApiKey = apiKeys.restaurantKey;
-let resultsContainer = document.querySelector("#resultsContainer")
+let resultsContainers = document.querySelector("#resultsContainers")
 const restaurantSearchText = document.getElementById("restaurantText")
 
 
@@ -13,8 +13,8 @@ const restaurantApi = {
 
                 const restaurantResults =
                     parsedRestaurants.restaurants
-resultsContainer.innerHTML=""
-resultsContainer.innerHTML=`<h2>Restaurant Results</h2>`
+resultsContainers.innerHTML=""
+resultsContainers.innerHTML=`<h2>Restaurant Results</h2>`
                 restaurantResults.forEach((restaurants, i) => {
                     const restaurantName = restaurants.restaurant.name
 
@@ -37,7 +37,7 @@ const restResults = (name, index) => {
     `
 }
 const restaurantToDom = (name) => {
-    resultsContainer.innerHTML += name
+    resultsContainers.innerHTML += name
 
 }
 const searchRestButton = (event) => {
