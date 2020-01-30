@@ -51,7 +51,7 @@ function capitalizeFirstLetter(string) {
 }
 
 
-const captureUserInfo = (event) => {
+const captureUserInfo = () => {
   concertKeyword = concertSearchText.value;
   capitalizeFirstLetter(concertKeyword);
 }
