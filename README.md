@@ -2,15 +2,17 @@
 
 1. Visit this link: https://github.com/nss-day-cohort-38/welcome-to-nashville-thunder-buffalo
 
-2. Download or clone the files. 
+2. Download or clone the files.
 
-3. In the terminal, navigate to the src directory.
+3. Create an apiKeys.js file.  Find API keys for Zomato and Ticketmaster.  Place the API keys in the apiKeys.js file.  Place the keys inside of an object named apiKeys with the Zomato key having a property of restaurantKey and the Ticketmaster key having a property of concertKey
 
-4. Enter the command hs -o to open the application in the web browser. 
+4. In the terminal, navigate to the src directory.
 
-5. Enter information in the search input field for each category. Only one search can be made at a time.
+5. Enter the command hs -o to open the application in the web browser. 
 
-6. Save the information to the itinerary, where the results will be displayed. 
+6. Enter information in the search input field for each category. Only one search can be made at a time.
+
+7. Save the information to the itinerary, where the results will be displayed. 
 
 # Thunder Buffalo Application
 The Thunder Buffalo application is a one-stop shop of finding great things to do in Nashville and build an Itinerary based on the results.  Once you have the application loaded up, You will see four text input fields with a search button next to them.  Each of the four fields will search for different activities in the Nashville area.
