@@ -1,3 +1,58 @@
+# Thunder Buffalo Application Instructions
+
+1. Visit this link: https://github.com/nss-day-cohort-38/welcome-to-nashville-thunder-buffalo
+
+2. Download or clone the files. 
+
+3. In the terminal, navigate to the src directory.
+
+4. Enter the command hs -o to open the application in the web browser. 
+
+5. Enter information in the search input field for each category. Only one search can be made at a time.
+
+6. Save the information to the itinerary, where the results will be displayed. 
+
+# Thunder Buffalo Application
+The Thunder Buffalo application is a one-stop shop of finding great things to do in Nashville and build an Itinerary based on the results.  Once you have the application loaded up, You will see four text input fields with a search button next to them.  Each of the four fields will search for different activities in the Nashville area.
+
+* Parks -- The first text input field searches for parks according to features listed for each park using the Nashville [Metro Gov API] (https://dev.socrata.com/foundry/data.nashville.gov/xbru-cfzi).
+
+* Public Art Collections -- The second text input field searches for public art collections by the descriptions of the art using Nashville [Metro Gov API](https://dev.socrata.com/foundry/data.nashville.gov/eviu-nxp6)
+
+* Restaurants -- The third text input field searches for restaurants in the Nashville area according to cuisine using the [Zomato API](https://developers.zomato.com/api)
+
+* Concerts -- The fourth text input field searches for concerts in the Nashville area according to music genre using the [Ticketmaster API](https://developer.ticketmaster.com/products-and-docs/apis/getting-started/)
+
+After each search button is clicked a list of results will appear below the text input fields.  There will be save buttons listed next to each search result.  The art collections results will also populate a "More Info" link next to each result that will open up another web browser tab with additional information regarding that specific piece of art. When you click the save button it will populate that activity onto your itinerary at the bottom of the page.   Welcome to Nashville and hopefully this application will make your stay more enjoyable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Welcome to Nashville: Build an itinerary for a day trip to Music City
 
 In this app users can search for four different things to do/visit in Nashville:
