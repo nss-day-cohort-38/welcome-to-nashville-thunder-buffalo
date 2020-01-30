@@ -1,9 +1,10 @@
+// This is saving the URL to a variable so that it doesn't have to be typed out and the variable can be used instead
 const baseArtUrl = "https://data.nashville.gov/resource/eviu-nxp6.json?";
 
+//The artApiManager is taking the search criteria from the text  input field and 
+//searching throuph the API to return the information desired
 const artApiManager = {
     searchArtCollections(searchCriteria) {
-        console.log("search artwork");
-
         const criteria = encodeURIComponent(`"%${searchCriteria}%"`);
         const url = baseArtUrl + `$where=description like ${criteria}`;
         return fetch(url).then(resp => resp.json());
@@ -12,24 +13,25 @@ const artApiManager = {
 
 const searchEventManager1 = {
 
+//This method is adding a "click" event to the search button for the art collection
+//text input field.  It also clears out the text input field once the search button
+//is clicked.  This method also sends all of the results to the DOM
     addSearchClickEventLister1() {
-
-        console.log("addSearchClickEventListener");
-
         const button = document.getElementById("artCollectionsButton");
 
         button.addEventListener("click", () => {
 
-            console.log("button click handler");
-
             const input = document.getElementById("artText");
             const searchCriteria = input.value;
             const searchResultPromise = artApiManager.searchArtCollections(searchCriteria);
+
             searchResultPromise.then(searchResults => {
                 searchResultsDomManager1.renderSearchResults1(searchResults)
             });
+            input.value = ""
         });
     },
+//This method adds a header to the Art Results section
     addArtHeader(){
         return `
         <h2>Art Results</h2>
@@ -37,7 +39,10 @@ const searchEventManager1 = {
     }
 }
 
-
+//This function will resolve once the save button is clicked.  Once the save button
+//is clicked this function will target the HTML content of that section and add 
+//"favorite" class to the desired areas.  This also calls the method to remove
+//"favorite" class as well as the method to add results to the itinerary.
 const favoriteEventHandler1 = (evt) => {
     const buttonId = evt.target.id;
     const index = buttonId.split('-')[1];
@@ -56,12 +61,17 @@ const favoriteEventHandler1 = (evt) => {
 }
 
 const favoriteEventManager1 = {
+
+//This method adds a click event to all of the save buttons that populate
+//in the search results.
     addFavoriteEventListener1() {
         const buttons = document.querySelectorAll(".artwork__save");
         for (let button of buttons) {
             button.addEventListener("click", favoriteEventHandler1)
         }
     },
+//This method will remove all of the "favorite" classes that get added when you
+//click the save button.  This way only one result can be saved at a time
     removeFavorite() {
         const favorites = document.querySelectorAll(".favorite1")
         const artworkNames = document.querySelectorAll(".favorite__artwork")
@@ -76,7 +86,8 @@ const favoriteEventManager1 = {
             artist.classList.remove("favorite__artist")
         }
     },
-
+//This method will add information to the itinerary based on which save button
+//is clicked
     addItinerary() {
         const artworkName = document.querySelector(".favorite__artwork")
         const artist = document.querySelector(".favorite__artist")
@@ -88,8 +99,9 @@ const favoriteEventManager1 = {
 
 
 const searchResultsDomManager1 = {
+
+//This method will return the search results to the DOM using HTML once it is called
     artworkFactory(artwork, index) {
-        console.log("artwork");
         return `
             <section id="artwork-${index}" class="artwork">
                 <span>${index+1}.</span>
@@ -110,11 +122,9 @@ const searchResultsDomManager1 = {
             </section>
         `
     },
+
+//This method is rendering the search results to the resultsContainer in the index.html file
     renderSearchResults1(searchResults) {
-
-        console.log("renderSearchResults");
-
-
 
         const container = document.querySelector("#resultsContainer");
         container.innerHTML = "";
