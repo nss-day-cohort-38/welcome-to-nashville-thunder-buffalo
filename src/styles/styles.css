@@ -12,3 +12,16 @@ li {
     list-style: none;
 }
 
+h1 {
+   padding-left: 38%;
+}
+img {
+    padding-left:34%;
+    display: flex;
+}
+h2{
+    padding-left: 39%;
+}
+.second-header{
+    padding-left: 43%;
+}
