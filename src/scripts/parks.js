@@ -30,6 +30,8 @@ const searchParksManager = {
             searchResultPromise.then(searchResults => {
                 searchResultsDomManager0.renderSearchResults(searchResults);
             });
+
+            input.value = "";
         });
     }
 }
