@@ -15,7 +15,7 @@
 # Thunder Buffalo Application
 The Thunder Buffalo application is a one-stop shop of finding great things to do in Nashville and build an Itinerary based on the results.  Once you have the application loaded up, You will see four text input fields with a search button next to them.  Each of the four fields will search for different activities in the Nashville area.
 
-* Parks -- The first text input field searches for parks according to features listed for each park using the Nashville [Metro Gov API] (https://dev.socrata.com/foundry/data.nashville.gov/xbru-cfzi).
+* Parks -- The first text input field searches for parks according to features listed for each park using the Nashville [Metro Gov API](https://dev.socrata.com/foundry/data.nashville.gov/xbru-cfzi).
 
 * Public Art Collections -- The second text input field searches for public art collections by the descriptions of the art using Nashville [Metro Gov API](https://dev.socrata.com/foundry/data.nashville.gov/eviu-nxp6)
 
