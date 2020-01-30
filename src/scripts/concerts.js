@@ -8,6 +8,7 @@ const concertsContainer = document.getElementById("concertName");
 
 const concertAPI = {
     getConcerts(concertKeyword) {
+      console.log(concertKeyword);
       return fetch(`http://app.ticketmaster.com/discovery/v2/events.json?keyword=${concertKeyword}&city=Nashville&apikey=${concertAPIKey}`)
         .then(response => response.json())
         .then(parsedConcerts => {
@@ -45,7 +46,7 @@ const insertConcertToDom= (concert) => {
 }
 
 function capitalizeFirstLetter(string) {
-    concertKeyword = string.charAt(0).toUpperCase() + string.slice(1);
+    concertKeyword = string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
     concertAPI.getConcerts(concertKeyword);
     concertSearchText.value = "";
 }
